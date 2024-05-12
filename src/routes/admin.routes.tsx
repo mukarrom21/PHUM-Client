@@ -61,53 +61,53 @@ export const adminPaths: TPaths[] = [
 //   },
 // ];
 
-export const adminRoutes: TRoutes[] = adminPaths.reduce(
-  (acc: TRoutes[], curr) => {
-    if (curr.children) {
-      curr.children.forEach((child) => {
-        if (child.path && child.element) {
-          acc.push({
-            path: child.path,
-            element: child.element,
-          });
-        }
-      });
-    }
-    if (curr.path && curr.element) {
-      acc.push({
-        path: curr.path,
-        element: curr.element,
-      });
-    }
+// export const adminRoutes: TRoutes[] = adminPaths.reduce(
+//   (acc: TRoutes[], curr) => {
+//     if (curr.children) {
+//       curr.children.forEach((child) => {
+//         if (child.path && child.element) {
+//           acc.push({
+//             path: child.path,
+//             element: child.element,
+//           });
+//         }
+//       });
+//     }
+//     if (curr.path && curr.element) {
+//       acc.push({
+//         path: curr.path,
+//         element: curr.element,
+//       });
+//     }
 
-    return acc;
-  },
-  []
-);
+//     return acc;
+//   },
+//   []
+// );
 
-export const adminSidebarItems: TSidebarItem[] = adminPaths.reduce(
-  (acc: TSidebarItem[], curr) => {
-    if (!curr.children && curr.path && curr.element) {
-      acc.push({
-        key: curr.name,
-        label: <NavLink to={`/admin/${curr.path}`}>{curr.name}</NavLink>,
-        icon: curr.icon,
-      });
-    }
+// export const adminSidebarItems: TSidebarItem[] = adminPaths.reduce(
+//   (acc: TSidebarItem[], curr) => {
+//     if (!curr.children && curr.path && curr.element) {
+//       acc.push({
+//         key: curr.name,
+//         label: <NavLink to={`/admin/${curr.path}`}>{curr.name}</NavLink>,
+//         icon: curr.icon,
+//       });
+//     }
 
-    if (curr.children) {
-      acc.push({
-        key: curr.name,
-        label: curr.name,
-        icon: curr.icon,
-        children: curr.children.map((child) => ({
-          key: child.name,
-          label: <NavLink to={`/admin/${child.path}`}>{child.name}</NavLink>,
-          icon: child.icon,
-        })),
-      });
-    }
-    return acc;
-  },
-  []
-);
+//     if (curr.children) {
+//       acc.push({
+//         key: curr.name,
+//         label: curr.name,
+//         icon: curr.icon,
+//         children: curr.children.map((child) => ({
+//           key: child.name,
+//           label: <NavLink to={`/admin/${child.path}`}>{child.name}</NavLink>,
+//           icon: child.icon,
+//         })),
+//       });
+//     }
+//     return acc;
+//   },
+//   []
+// );
