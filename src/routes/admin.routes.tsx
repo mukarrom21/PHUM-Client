@@ -1,9 +1,9 @@
-import { NavLink } from "react-router-dom";
 import AdminDashboard from "../pages/admin/AdminDashboard";
 import CreateAdmin from "../pages/admin/CreateAdmin";
 import CreateFaculty from "../pages/admin/CreateFaculty";
 import CreateStudent from "../pages/admin/CreateStudent";
-import { TPaths, TRoutes, TSidebarItem } from "../types";
+import AcademicSemester from "../pages/admin/academic-management/AcademicSemester";
+import { TPaths } from "../types";
 import {
   UserOutlined,
   UserAddOutlined,
@@ -16,6 +16,18 @@ export const adminPaths: TPaths[] = [
     path: "dashboard",
     icon: <DashboardTwoTone />,
     element: <AdminDashboard />,
+  },
+  {
+    name: "Academic Management",
+    icon: <UserOutlined />,
+    children: [
+      {
+        name: "Academic Semester",
+        path: "academic-semesters",
+        icon: <UserOutlined />,
+        element: <AcademicSemester />,
+      },
+    ],
   },
   {
     name: "User Management",

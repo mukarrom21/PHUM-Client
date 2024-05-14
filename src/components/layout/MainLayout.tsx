@@ -17,7 +17,7 @@ const MainLayout = () => {
 
       {/* Layout */}
       <Layout>
-        <Header style={{ padding: 0 }}>
+        <Header>
           {/* Log out button */}
           <Button onClick={() => dispatch(logout())}>Logout</Button>
         </Header>
