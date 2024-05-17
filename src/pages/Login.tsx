@@ -19,6 +19,11 @@ const Login = () => {
   //   },
   // });
 
+  const defaultValues = {
+    id: "A-0001",
+    password: "123456",
+  };
+
   const navigate = useNavigate();
 
   // call app dispatch
@@ -73,7 +78,7 @@ const Login = () => {
   };
   return (
     <Row justify="center" align="middle" style={{ height: "100vh" }}>
-      <PHForm onSubmit={onSubmit}>
+      <PHForm onSubmit={onSubmit} defaultValues={defaultValues}>
         {/* <label htmlFor="id">User ID: </label> */}
         <PHInput type="text" name={"id"} label={"User ID :"} />
 
